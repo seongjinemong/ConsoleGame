@@ -7,6 +7,8 @@
 #define MAX_X 150
 #define MAX_Y 50
 
+int map[150][50] = { 0 };
+
 void initCursor()
 {
 	CONSOLE_CURSOR_INFO cursorInfo = { 0, };
@@ -30,6 +32,14 @@ void resizeConsole()
 
 void displayStart()
 {
+	gotoxy(MAX_X / 2 - 3, MAX_Y / 2);
+	printf("Tetris");
+	Sleep(300);
+
+	gotoxy(MAX_X / 2 - 3, MAX_Y / 2);
+	printf("Tetris");
+	Sleep(300);
+
 	while (1)
 	{
 		gotoxy(MAX_X / 2 - 3, MAX_Y / 2);
