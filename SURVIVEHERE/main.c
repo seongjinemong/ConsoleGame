@@ -4,10 +4,13 @@
 #include <Windows.h>
 #include <conio.h>
 
+#define kbhit _kbhit
+#define getch _getch
+
 #define MAX_X 150
 #define MAX_Y 50
 
-int map[300][100] = { 0 };
+int map[300][100];
 
 void initCursor()
 {
@@ -63,7 +66,21 @@ void printMap(int x, int y)
 {
 	gotoxy(0, 0);
 	
-	for (int i=0; i<150; i++)
+	for (int i = 0; i < 50; i++)
+	{
+		for (int j = 0; j < 150; j++)
+		{
+			if (map[j + x][i + y] == 0)
+				printf(" ");
+			else
+			{
+				Sleep(1000);
+				printf("%d", map[j + x][i + y]);
+			}
+
+		}
+		gotoxy(0, i);
+	}
 }
 
 int main()
@@ -74,4 +91,7 @@ int main()
 	displayStart();
 
 	initMap();
+	printMap(75, 25);
+
+	Sleep(1000000);
 }
