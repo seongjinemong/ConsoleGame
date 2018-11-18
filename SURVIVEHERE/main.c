@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <Windows.h>
+#include <conio.h>
 
 #define MAX_X 150
 #define MAX_Y 50
