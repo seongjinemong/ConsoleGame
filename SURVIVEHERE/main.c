@@ -7,7 +7,7 @@
 #define MAX_X 150
 #define MAX_Y 50
 
-int map[150][50] = { 0 };
+int map[300][100] = { 0 };
 
 void initCursor()
 {
@@ -54,10 +54,24 @@ void displayStart()
 	system("cls");
 }
 
+void initMap()
+{
+	map[150][50] = 1;
+}
+
+void printMap(int x, int y)
+{
+	gotoxy(0, 0);
+	
+	for (int i=0; i<150; i++)
+}
+
 int main()
 {
 	initCursor();
 	resizeConsole();
 
 	displayStart();
+
+	initMap();
 }
